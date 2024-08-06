@@ -32,15 +32,15 @@ export default function RootLayout({
             logoImageUrl: "/icons/logo.svg",
           },
           variables: {
-            colorText: "#fff",
+            colorText: "#000000", 
             colorPrimary: "#0E78F9",
-            colorBackground: "#1C1F2E",
-            colorInputBackground: "#252A41",
-            colorInputText: "#fff",
+            colorBackground: "#FFFFFF", 
+            colorInputBackground: "#F0F0F0",
+            colorInputText: "#000000", 
           },
         }}
       >
-        <body className={`${inter.className} bg-dark-2`}>
+        <body className={`${inter.className} bg-white-2`}>
           {children}
           <Toaster />
         </body>
