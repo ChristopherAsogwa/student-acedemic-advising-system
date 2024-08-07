@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentTime(new Date());
-    }, 60000); // Update every minute
+    }, 15000); // Update every minute
 
     // Cleanup interval on component unmount
     return () => clearInterval(intervalId);
