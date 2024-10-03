@@ -1,11 +1,8 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode } from 'react';
 import Image from 'next/image';
-
 import { Button } from './ui/button';
-import { Dialog, DialogContent} from "@/components/ui/dialog"
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { cn } from '@/lib/utils';
-
-
 
 interface MeetingModalProps {
   isOpen: boolean;
@@ -15,13 +12,14 @@ interface MeetingModalProps {
   children?: ReactNode;
   handleClick?: () => void;
   buttonText?: string;
-  instantMeeting?: boolean;
+  meetingLink?: string; // Optional to handle link copying
+  meetingDateTime?: string; // Optional to handle meeting details
+  handleCopyClick?: () => void;
   image?: string;
-  buttonClassName?: string;
-  buttonIcon?: string;
+  buttonIcon?: string | undefined;
 }
 
-const MeetingModal = ({ 
+const MeetingModal = ({
   isOpen,
   onClose,
   title,
@@ -29,11 +27,12 @@ const MeetingModal = ({
   children,
   handleClick,
   buttonText,
-  instantMeeting,
+  meetingLink,
+  meetingDateTime,
+  handleCopyClick,
   image,
-  buttonClassName,
   buttonIcon,
- }: MeetingModalProps) => {
+}: MeetingModalProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="flex w-full max-w-[520px] flex-col gap-6 border-none bg-white-1 px-6 py-9 text-white">
@@ -46,11 +45,32 @@ const MeetingModal = ({
           <h1 className={cn("text-3xl font-bold leading-[42px]", className)}>
             {title}
           </h1>
+          
+          {meetingLink && meetingDateTime && (
+            <div className="text-black">
+              <p><strong>Session Date and Time:</strong> {meetingDateTime}</p>
+              <p><strong>Session Link:</strong></p>
+              <div className="flex items-center gap-2 bg-gray-100 p-2 rounded">
+                <input
+                  type="text"
+                  value={meetingLink}
+                  readOnly
+                  className="bg-gray-100 w-full text-sm"
+                />
+                <button
+                  onClick={handleCopyClick}
+                  className="flex items-center justify-center w-8 h-8 bg-gray-400 rounded"
+                >
+                  <Image src="/icons/copy.svg" alt="Copy" width={16} height={16}/>
+                </button>
+              </div>
+            </div>
+          )}
+          
           {children}
+          
           <Button
-            className={
-              "bg-blue-1 focus-visible:ring-0 focus-visible:ring-offset-0"
-            }
+            className="bg-blue-1 text-[#fff] focus-visible:ring-0 focus-visible:ring-offset-0"
             onClick={handleClick}
           >
             {buttonIcon && (
@@ -62,12 +82,12 @@ const MeetingModal = ({
               />
             )}{" "}
             &nbsp;
-            {buttonText || "Schedule Meeting"}
+            {buttonText || undefined}
           </Button>
         </div>
       </DialogContent>
     </Dialog>
-  )
-}
+  );
+};
 
-export default MeetingModal
+export default MeetingModal;
