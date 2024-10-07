@@ -114,7 +114,7 @@ const MeetingTypeList = () => {
       <MeetingModal 
         isOpen={meetingState === 'isScheduleMeeting' || isModalOpen}
         onClose={closeModal} // Use the updated closeModal function
-        title={!callDetails ? "Create Meeting" : "Session Created"}
+        title={!callDetails ? "Create Session" : "Session Created"}
         handleClick={!callDetails ? createMeeting : undefined} // Create meeting if no details
         meetingLink={callDetails ? showMeetingLink : undefined} // Show link if meeting created
         meetingDateTime={callDetails ? meetingDateTime : undefined} // Show date/time if created
