@@ -123,7 +123,7 @@ const MeetingTypeList = () => {
           toast({ title: 'Link Copied' });
         } : undefined}
         image={callDetails ? '/icons/checked.svg' : undefined} // Show image when meeting created
-        buttonText={!callDetails ? "Schedule Meeting" : undefined}
+        buttonText={!callDetails ? "Schedule Session" : undefined}
       >
         {/* If no call details, show meeting creation form */}
         {!callDetails && (
