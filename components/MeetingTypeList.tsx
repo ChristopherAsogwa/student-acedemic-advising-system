@@ -63,12 +63,12 @@ const MeetingTypeList = () => {
       setMeetingDateTime(values.dateTime.toLocaleString()); // Store the date & time in state
 
       setIsModalOpen(true);
-
       toast({
         title: 'Meeting Created',
       });
     } catch (error) {
       console.error(`You got connection error, ${error}`);
+      console.log({ client, user, values });
       toast({ title: 'Failed to create Meeting' });
     }
   };
