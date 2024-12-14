@@ -13,7 +13,6 @@ interface HomeCardProps {
 
 const HomeCard = ({ className, img, title, description, handleClick }: HomeCardProps) => {
   return (
-      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <section
           className={cn(
               'bg-orange-1 px-4 py-6 flex flex-col justify-between w-full xl:max-w-[270px] min-h-[260px] rounded-[14px] cursor-pointer',
