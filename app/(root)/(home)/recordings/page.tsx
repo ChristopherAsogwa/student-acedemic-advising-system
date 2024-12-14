@@ -10,7 +10,6 @@ const Recordings = () => {
             <h1
                 id="session-recordings-heading"
                 className="text-3xl font-bold"
-                tabIndex={0} // Makes the heading focusable for keyboard users
                 aria-label="Session Recordings" // Provides a clear label for screen readers
             >
                 Session Recordings

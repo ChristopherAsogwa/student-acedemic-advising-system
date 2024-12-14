@@ -31,7 +31,6 @@ const MeetingCard = ({
   return (
       <section
           className="flex min-h-[258px] w-full flex-col justify-between rounded-[14px] bg-white-1 px-5 py-8 xl:max-w-[568px]"
-          role="region" // Marks this card as a distinct, navigable section
           aria-label={`Meeting: ${title}, scheduled for ${date}`} // Provides descriptive context for the card
       >
         {/* Meeting Info */}
