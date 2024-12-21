@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Academic Adviser-Student Communication Platform
 
-## Getting Started
+This project is built to facilitate real-time audio and video communication between academic advisers and students. Using the powerful GetStream.io for real-time communication and ClerkJS for user management, authentication, and authorization, this application bridges the gap between advisers and students efficiently.
 
-First, run the development server:
+# Features
+•	Real-time Communication: Seamless audio and video calls using GetStream.io, ensuring smooth interactions between users.
+•	User Management: Robust authentication and authorization powered by ClerkJS, providing secure and user-friendly account handling.
+•	Built with Next.js: Utilizes the latest Next.js framework with TypeScript for scalability and maintainability.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Getting Started
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Follow the instructions below to set up and run the application locally:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Ensure you have the following installed on your machine:
+•	Node.js (version 16 or higher)
+•	npm (or yarn/pnpm as alternatives)
+
+# Installation
+    1.	Clone the repository:
+
+    git clone <repository-url>  
+    cd <repository-directory>
+
+
+	2.	Install dependencies:
+
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+
+
+
+# Running the Development Server
+
+Start the development server with:
+
+    npm run dev
+    # or
+    yarn dev
+    # or
+    pnpm dev
+
+Open http://localhost:3000 in your browser to access the application. The app will automatically reload if you make edits to the source code.
+
+# Configuration
+
+Ensure you configure the required GetStream.io and ClerkJS credentials. Add them to your environment variables (.env.local):
+
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+    CLERK_SECRET_KEY=your_clerk_secret_key
+    NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+    NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+    STREAM_SECRET_KEY=your_stream_secret_key
+    NEXT_PUBLIC_BASE_URL=your_local_or_base_url
+    NEXT_PUBLIC_STREAM_API_KEY=your_stream_api_key
+
+Refer to the documentation of GetStream.io and ClerkJS for guidance on obtaining API keys.
+
+# File Structure
+
+## Key files and folders:
+•	app/page.tsx: Main entry point for the application’s UI.
+•	app/api: API endpoints for server-side functionality.
+•	.env.local: Configuration for environment variables (not included in version control).
+
+## Standout Features
+•	Real-time Communication: Students and advisers can connect instantly via high-quality audio and video calls.
+•	Secure Authentication: ClerkJS ensures that only authorized users can access the platform.
+•	Modern Development Stack: Written with TypeScript and the Next.js App Router for performance and scalability.
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about the tools and frameworks used:
+•	Next.js Documentation: Learn about the features and APIs of Next.js.
+•	ClerkJS Documentation: Learn about authentication and user management with ClerkJS.
+•	GetStream.io Documentation: Explore GetStream.io’s features for real-time communication.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Deploy the application easily with Vercel:
+1.	Push your repository to a Git provider (GitHub, GitLab, etc.).
+2.	Connect your repository to Vercel.
+3.	Follow the deployment process outlined in the Next.js deployment documentation.
 
-## Deploy on Vercel
+## Credits
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project was inspired by and built with the guidance of resources provided by JSMastery Pro. Their educational materials and tutorials greatly contributed to the implementation and functionality of this application.
